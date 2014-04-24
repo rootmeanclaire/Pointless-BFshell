@@ -5,7 +5,7 @@
 using namespace std;
 
 /**************************\
- * Version: 1.2.3 Beta    *
+ * Version: 1.0.0 Beta    *
  * Author: Evan Shimoniak *
 \**************************/
 
@@ -62,7 +62,7 @@ void processCommand(string line) {
 	if (line == "help") {
 		cout << "COMMANDS\n" << "\t\"version\" Print the current version of the interpreter\n" << "\t\"reset\"   Reset program memory\n";
 	} else if (line == "version") {
-		cout << "Beta 1.2.3";
+		cout << "Beta 1.0.0";
 	} else if (line == "reset") {
 		reset();
 		setColor(BLACK, DEFAULT);
