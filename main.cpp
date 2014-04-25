@@ -5,7 +5,7 @@
 using namespace std;
 
 /**************************\
- * Version: 1.0.0 Beta    *
+ * Version: 1.1.0 Beta    *
  * Author: Evan Shimoniak *
 \**************************/
 
@@ -28,12 +28,6 @@ int main() {
 		} else {
 			//If line contains no syntax characters, then attempt processing as an interpreter command
 			processCommand(line);
-//				char** splitStr = splitStrBySpaces(line);
-//				int i = 0;
-//
-//				for (i; i < sizeof(splitStr); i++) {
-//					printf("%s\n", splitStr[i]);
-//				}
 		}
 	} while (true);
 
@@ -62,7 +56,7 @@ void processCommand(string line) {
 	if (line == "help") {
 		cout << "COMMANDS\n" << "\t\"version\" Print the current version of the interpreter\n" << "\t\"reset\"   Reset program memory\n";
 	} else if (line == "version") {
-		cout << "Beta 1.0.0";
+		cout << "Beta 1.1.0";
 	} else if (line == "reset") {
 		reset();
 		setColor(BLACK, DEFAULT);

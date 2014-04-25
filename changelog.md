@@ -1,5 +1,6 @@
 Beta
 ====
-1.0.0
+1.1.0
 -----
- *
+ * Added full memory
+ * Commented
