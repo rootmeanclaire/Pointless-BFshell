@@ -88,15 +88,34 @@ void exec(string code) {
 	{
 		int openbrs = 0;
 		int closebrs = 0;
+		bool foundOpen = false;
+		bool lastBraceOpen = false;
 
+		//Check number of openning and closing braces
 		for (int i = 0; i < code.length(); i++) {
 			if (code.at(i) == '[') {
+				foundOpen = true;
+				lastBraceOpen = true;
 				openbrs++;
 			} else if (code.at(i) == ']') {
+				if (!foundOpen) {
+					setColor(RED, BLACK);
+					cout << "Syntax error: missing '['\n";
+					setColor(DEFAULT, BLACK);
+					return;
+				}
+				lastBraceOpen = false;
 				closebrs++;
 			}
 		}
+		if (lastBraceOpen) {
+			setColor(RED, BLACK);
+			cout << "Syntax error: missing ']'\n";
+			setColor(DEFAULT, BLACK);
+			return;
+		}
 
+		//If number of open braces isn't equal to number of close braces, print error message and abort execution
 		if (openbrs != closebrs) {
 			setColor(RED, BLACK);
 			if (openbrs > closebrs) {
